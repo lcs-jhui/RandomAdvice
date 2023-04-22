@@ -9,7 +9,18 @@ import SwiftUI
 
 struct AdviceView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            
+            VStack{
+                
+                Text("Buy something you would use, not something useless.")
+                    .font(.title)
+                    .multilineTextAlignment(.center)
+            }
+            .padding()
+            .navigationTitle("Random Advice")
+            
+        }
     }
 }
 
