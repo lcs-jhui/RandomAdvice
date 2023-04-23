@@ -12,6 +12,7 @@
 		B9D8470C29F4800100F1598F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D8470B29F4800100F1598F /* Preview Assets.xcassets */; };
 		B9D8471529F4801D00F1598F /* AdviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8471429F4801D00F1598F /* AdviceView.swift */; };
 		B9D8471829F4810E00F1598F /* Advice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8471729F4810E00F1598F /* Advice.swift */; };
+		B9D8471B29F481F100F1598F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8471A29F481F100F1598F /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		B9D8470B29F4800100F1598F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B9D8471429F4801D00F1598F /* AdviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceView.swift; sourceTree = "<group>"; };
 		B9D8471729F4810E00F1598F /* Advice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advice.swift; sourceTree = "<group>"; };
+		B9D8471A29F481F100F1598F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D8470429F47FFF00F1598F /* RandomAdviceApp.swift */,
+				B9D8471929F481E400F1598F /* Services */,
 				B9D8471629F4810200F1598F /* Model */,
 				B9D8471229F4800800F1598F /* Views */,
 				B9D8470829F4800100F1598F /* Assets.xcassets */,
@@ -84,6 +87,14 @@
 				B9D8471729F4810E00F1598F /* Advice.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B9D8471929F481E400F1598F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B9D8471A29F481F100F1598F /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 			files = (
 				B9D8471529F4801D00F1598F /* AdviceView.swift in Sources */,
 				B9D8470529F47FFF00F1598F /* RandomAdviceApp.swift in Sources */,
+				B9D8471B29F481F100F1598F /* NetworkService.swift in Sources */,
 				B9D8471829F4810E00F1598F /* Advice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,18 +8,61 @@
 import SwiftUI
 
 struct AdviceView: View {
+    
+    //MARK: Stored Properties
+    
+    //Current advice to display
+    @State var currentAdvice: Advice?
+    
     var body: some View {
         NavigationView{
             
             VStack{
-                
-                Text("Buy something you would use, not something useless.")
-                    .font(.title)
-                    .multilineTextAlignment(.center)
-            }
-            .padding()
-            .navigationTitle("Random Advice")
+
+                Spacer()
+
             
+            if let currentAdvice = currentAdvice {
+                
+                //Show the advice if it can be unwrapped
+                
+                    
+                    
+                    Text(currentAdvice.advice)
+                        .font(.title)
+                        .multilineTextAlignment(.center)
+                    
+                    
+                    
+                } else {
+                    
+                    //Show spinning wheel
+                    ProgressView()
+                    
+                }
+                
+                Spacer()
+                
+                Button(action: {
+                    Task{
+                        //Get another advice
+                        withAnimation{
+                            currentAdvice = nil
+                        }
+                        currentAdvice = await NetworkService.fetch()
+                    }
+                }, label: {
+                    Text("Fetch another one")
+                })
+                .buttonStyle(.borderedProminent)
+                
+            }
+            .navigationTitle("Random Advice")
+
+        }
+        .padding()
+        .task {
+            currentAdvice = await NetworkService.fetch()
         }
     }
 }
