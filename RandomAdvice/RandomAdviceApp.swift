@@ -11,9 +11,19 @@ import SwiftUI
 struct RandomAdviceApp: App {
     var body: some Scene {
         WindowGroup {
-            AdviceView()
-            //Make the database avaiable to all the child views through the environment
-                .environment(\.blackbirdDatabase, AppDatabase.instance)
+           
+            TabView{
+                AdviceView()
+                    .tabItem{
+                        Label("Advice", systemImage: "book.closed")
+                    }
+                
+                FavouritesView()
+                    .tabItem{
+                        Label("Favourites", systemImage: "heart")
+                    }
+            }
+        
         }
     }
 }

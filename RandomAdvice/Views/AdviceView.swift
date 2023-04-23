@@ -71,7 +71,9 @@ struct AdviceView: View {
                 }, label: {
                     Text("Save For Later")
                 })
+                .tint(.green)
                 .buttonStyle(.borderedProminent)
+            
                 
                 
             }
