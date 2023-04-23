@@ -23,7 +23,8 @@ struct RandomAdviceApp: App {
                         Label("Favourites", systemImage: "heart")
                     }
             }
-        
+            //Make the database avaiable to all child views through the environment
+            .environment(\.blackbirdDatabase, AppDatabase.instance)
         }
     }
 }
