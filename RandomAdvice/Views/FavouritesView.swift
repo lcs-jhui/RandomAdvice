@@ -54,7 +54,7 @@ struct FavouritesView: View {
                 print(idList)
                 
                 //Delete the row from the database
-                try core.query("DELETE FROM MoodItem WHERE id IN (?)", idList)
+                try core.query("DELETE FROM Advice WHERE id IN (?)", idList)
             }
         }
     }
