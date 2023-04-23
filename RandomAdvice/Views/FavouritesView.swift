@@ -16,6 +16,9 @@ struct FavouritesView: View {
         try await Advice.read(from: db)
     }) var favouriteAdvices
     
+    //Acces the connection to the database
+    @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
+    
     //MARK: Computed Properties
     var body: some View {
         NavigationView{
@@ -27,8 +30,32 @@ struct FavouritesView: View {
                         Text(currentAdvice.advice)
                     }
                 }
+                .onDelete(perform: removeRows)
             }
             .navigationTitle("Favourites")
+        }
+    }
+    
+    //MARK: Functions
+    func removeRows(at offsets: IndexSet) {
+        
+        Task{
+            try await db!.transaction { core in
+                
+                //Get ID of item to be deleted
+                var idList = ""
+                for offset in offsets {
+                    idList += "\(favouriteAdvices.results[offset].id),"
+                }
+                
+                //Remove final comma
+                print(idList)
+                idList.removeLast()
+                print(idList)
+                
+                //Delete the row from the database
+                try core.query("DELETE FROM MoodItem WHERE id IN (?)", idList)
+            }
         }
     }
 }
