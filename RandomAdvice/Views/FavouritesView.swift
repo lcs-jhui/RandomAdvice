@@ -19,9 +19,13 @@ struct FavouritesView: View {
     //MARK: Computed Properties
     var body: some View {
         NavigationView{
-            List(favouriteAdvices.results) { currentAdvice in
-                VStack(alignment: .leading) {
-                    Text(currentAdvice.advice)
+            List {
+                
+                
+                ForEach(favouriteAdvices.results) { currentAdvice in
+                    VStack(alignment: .leading) {
+                        Text(currentAdvice.advice)
+                    }
                 }
             }
             .navigationTitle("Favourites")
