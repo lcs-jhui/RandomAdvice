@@ -82,7 +82,9 @@ struct AdviceView: View {
         }
         .padding()
         .task {
-            currentAdvice = await NetworkService.fetch()
+            if currentAdvice == nil {
+                currentAdvice = await NetworkService.fetch()
+            }
         }
     }
 }
