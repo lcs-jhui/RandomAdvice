@@ -4,7 +4,7 @@
 //
 //  Created by Justin Hui on 22/4/2023.
 //
-
+import Blackbird
 import SwiftUI
 
 struct AdviceView: View {
@@ -13,6 +13,9 @@ struct AdviceView: View {
     
     //Current advice to display
     @State var currentAdvice: Advice?
+    
+    //Acces the connection to the database
+    @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
     
     var body: some View {
         NavigationView{
@@ -52,9 +55,24 @@ struct AdviceView: View {
                         currentAdvice = await NetworkService.fetch()
                     }
                 }, label: {
-                    Text("Fetch another one")
+                    Text("Become More Wise")
                 })
                 .buttonStyle(.borderedProminent)
+                
+                Button(action: {
+                    Task{
+                        //Write to the database
+                        if let currentAdvice = currentAdvice {
+                            try await db!.transaction { core in
+                                try core.query("INSERT INTO Advice (id, advice) VALUES (?, ?)", currentAdvice.id, currentAdvice.advice)
+                            }
+                        }
+                    }
+                }, label: {
+                    Text("Save For Later")
+                })
+                .buttonStyle(.borderedProminent)
+                
                 
             }
             .navigationTitle("Random Advice")
@@ -70,5 +88,6 @@ struct AdviceView: View {
 struct AdviceView_Previews: PreviewProvider {
     static var previews: some View {
         AdviceView()
+            .environment(\.blackbirdDatabase, AppDatabase.instance)
     }
 }
