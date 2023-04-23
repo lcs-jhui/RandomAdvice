@@ -15,6 +15,7 @@
 		B9D8471B29F481F100F1598F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8471A29F481F100F1598F /* NetworkService.swift */; };
 		B9D8471E29F4B11B00F1598F /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = B9D8471D29F4B11B00F1598F /* Blackbird */; };
 		B9D8472029F4B43F00F1598F /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B9D8471F29F4B43F00F1598F /* db.sqlite */; };
+		B9D8472329F4B48D00F1598F /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8472229F4B48D00F1598F /* AppDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B9D8471729F4810E00F1598F /* Advice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advice.swift; sourceTree = "<group>"; };
 		B9D8471A29F481F100F1598F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B9D8471F29F4B43F00F1598F /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		B9D8472229F4B48D00F1598F /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D8470429F47FFF00F1598F /* RandomAdviceApp.swift */,
+				B9D8472129F4B48000F1598F /* Helpers */,
 				B9D8471929F481E400F1598F /* Services */,
 				B9D8471629F4810200F1598F /* Model */,
 				B9D8471229F4800800F1598F /* Views */,
@@ -100,6 +103,14 @@
 				B9D8471A29F481F100F1598F /* NetworkService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B9D8472129F4B48000F1598F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B9D8472229F4B48D00F1598F /* AppDatabase.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 				B9D8470529F47FFF00F1598F /* RandomAdviceApp.swift in Sources */,
 				B9D8471B29F481F100F1598F /* NetworkService.swift in Sources */,
 				B9D8471829F4810E00F1598F /* Advice.swift in Sources */,
+				B9D8472329F4B48D00F1598F /* AppDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
